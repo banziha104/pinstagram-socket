@@ -8,7 +8,7 @@
 
 - [📱 Pinstagram Android (Kotlin & AndroidX)](https://github.com/banziha104/pinstagram_android)
 - [🍃 Pinstagram WAS (Spring Boot)](https://github.com/banziha104/pinstagram-was)
-- [👷🏾‍ Pinstagram DevOps (GKE & K8s & Helm)](https://github.com/banziha104/pinstagram_charts)
+- [🚚 Pinstagram DevOps (GKE & K8s & Helm)](https://github.com/banziha104/pinstagram_charts)
 - [🕳 Pinstagram Socket (Node.js & Socket.io)](https://github.com/banziha104/pinstagram_socket)
 
 <br>
