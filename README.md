@@ -25,7 +25,7 @@
   - GET /talk/getAllMessgae : 기존의 메세지를 전부 읽어들이 라우팅
 
 
-## 배포 
+## Deploy 
 
 - [Dockerfiles](https://github.com/banziha104/pinstagram_socket/blob/master/Dockerfile) 을 통한 빌드 
 - Google Container Registry 서비스로 푸쉬 
@@ -37,3 +37,10 @@
 - [Socket.IO](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/01_SocketIO.md) : Web Socket 활용을 위해 사용
 - [Express](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/02_Express.md) : 기존의 저장된 메세지를 접근하기 위해 
 - [MySQL](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/03_MySQL.md) : 메세지 데이터베이스에 접근하기 위해 사용
+
+
+## Inpression
+
+- 기존에 현업에서는 Spring Boot와 Stomp를 이용하여서 개발하였었는데, 이번에 최대한 가볍게 만들어보고자 Node.js를 활용해보았습니다.
+- 충분히 적은량의 코드로도 퍼포먼스를 낼 수 있어서 좋았습니다.
+- 다만 현재는 한개의 이벤트를 이용하고 있어 문제가 안되지만, 조금 소켓의 영향이 커진다면 TypeScript로 엄격하게 검사할 필요가 있어보입니다.
