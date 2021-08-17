@@ -1,50 +1,46 @@
-# Pinstagram Charts
+# Pinstagram 소켓 서버
 
-> Google Cloud Platform, Kubernetes, Helm 을 이용한 DevOps 프로젝트
+> Pinstagram 서비스에서 메세지 부분을 담당하는 서버입니다 
 
+<br>
 
 ## Pinstagram 프로젝트
 
 - [📱 Pinstagram Android (Kotlin & AndroidX)](https://github.com/banziha104/pinstagram_android)
 - [🍃 Pinstagram WAS (Spring Boot)](https://github.com/banziha104/pinstagram-was)
-- [🚚 Pinstagram DevOps (GKE & K8s & Helm)](https://github.com/banziha104/pinstagram_charts)
+- [👷🏾‍ Pinstagram DevOps (GKE & K8s & Helm)](https://github.com/banziha104/pinstagram_charts)
 - [🕳 Pinstagram Socket (Node.js & Socket.io)](https://github.com/banziha104/pinstagram_socket)
 
-## 개요
+<br>
 
-| 구분                      | 서비스                                  | 비고             |
-|-------------------------|--------------------------------------|----------------|
-| Node 구성                 | 마스터 1대 + 슬래이브 2대                     | 공유 코어, 2GB RAM |
-| Container               | Docker                               |                |
-| Container Orchestration | Google Kubernetes Engine (GKE)       |                |
-| Container Repository    | Google Container Registry (GCR)      |                |
-| Load Balancer & Ingress | Google Global Static IP Name Ingress |                |
-| [TLS 인증서](https://github.com/banziha104/pinstagram_charts/blob/master/templates/managed_sertificate.yml)             | Google ManagedCertificate            |                |
-| DNS                     | Google ManagedCertificate            |                |
-| Database                | Google SQL                           |                |
+## 개요 및 기능 
 
-## Features
+- Pinstagram 서비스에서 '톡톡' 탭의 메세지를 담당하는 서비스입니다.
+- Socket
+  - say Event : 웹소켓 클라이언트(현 프로젝트에서는 안드로이드만)에서 메세지를 주고 받을 수 있도록 만든 Socket 이벤트 처리 객체 입니다.
+  - connect Event
+  - disconnect Event
+- HTTP 
+  - GET /talk/healthCheck : Google Kubernetes Engines 에서 배포 여부를 readinessProbe를 이용한 헬스 체킹을 사용함으로, 이에 부하가 없는 경량의 응답처리를 위해 구현 
+  - GET /talk/getAllMessgae : 기존의 메세지를 전부 읽어들이 라우팅
 
-- [Ingress](https://github.com/banziha104/pinstagram_charts/blob/master/markdown/01_Ingress.md)
-- [Service](https://github.com/banziha104/pinstagram_charts/blob/master/markdown/images/02_Service.md)
-- [Deployment](https://github.com/banziha104/pinstagram_charts/blob/master/markdown/images/03_Deployment.md)
 
-## 전체 아키텍쳐
+## Deploy 
 
-- ![architecture](https://github.com/banziha104/pinstagram_charts/blob/master/markdown/images/architecture.png)
+- [Dockerfiles](https://github.com/banziha104/pinstagram_socket/blob/master/Dockerfile) 을 통한 빌드 
+- Google Container Registry 서비스로 푸쉬 
+- [Helm Charts](https://github.com/banziha104/pinstagram_charts/blob/master/templates/pinstagram-talk-deploy.yml) 를 이용해 Google Kubernetes Engine에 배포
 
-## 기술부채
 
-> 적용할 예정이 있는 부분입니다
+## Feature
 
-- Develop
-  - Scaffold : 단일 컨테이너로는 사용해보았는데, Helm과 연동방법을 아직 찾지 못해서 미뤄두었습니다.
-- Production
-  - CI/CD : Jenkins와 GCP Pipeline을 이용한 배포 자동화 (비용문제가..)
-  - Service Mash : istio (아직 GKE에서는 Beta)
-  - Monitoring : Prometheus & Grafana(시각화)
+- [Socket.IO](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/01_SocketIO.md) : Web Socket 활용을 위해 사용
+- [Express](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/02_Express.md) : 기존의 저장된 메세지를 접근하기 위해 
+- [MySQL](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/03_MySQL.md) : 메세지 데이터베이스에 접근하기 위해 사용
+
 
 ## Inpression
 
-- 평소에는 AWS를 이용하다 GCP를 이용해서 처음 개발해보았는데 생각보다 퍼포먼스가 나쁘지않습니다. 비용은 좀 비교해봐야 알 것 같습니다.
-- k8s의 경우 어느한 값이 App Name 과 Selector 등 여러 군데에서 사용되고, 이를 변경하다보면 실수를 자주하게 되는데, Helm을 통해 변수화시켜서 굉장히 편했습니다.
+- 기존에 현업에서는 Spring Boot와 Stomp를 이용하여서 개발하였었는데, 이번에 최대한 가볍게 만들어보고자 Node.js를 활용해보았습니다.
+- 충분히 적은량의 코드로도 퍼포먼스를 낼 수 있어서 좋았습니다.
+- 다만 현재는 한개의 이벤트를 이용하고 있어 문제가 안되지만, 조금 소켓의 영향이 커진다면 TypeScript로 엄격하게 검사할 필요가 있어보입니다.
