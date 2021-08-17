@@ -34,10 +34,6 @@ app.get('/talk/getAllMessage', (req, res) => {
 })
 
 io.on('connection', client => {
-    client.on('hello', (data) => {
-        console.log(`User Login ${data}`)
-        io.emit('hello', data)
-    })
 
     client.on('say', (data) => {
         console.log(`User Say ${data}`)
@@ -46,10 +42,6 @@ io.on('connection', client => {
         io.emit('say', data)
     })
 
-    client.on('bye', (data) => {
-        console.log(`User Logout ${data}`)
-        io.emit('bye', data)
-    })
     client.on('disconnect', (data) => {
         console.log(`User Disconnected ${client} ${data}`)
         client.disconnect()
