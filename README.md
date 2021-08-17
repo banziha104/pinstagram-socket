@@ -29,7 +29,7 @@
 
 - [Dockerfiles](https://github.com/banziha104/pinstagram_socket/blob/master/Dockerfile) 을 통한 빌드 
 - Google Container Registry 서비스로 푸쉬 
-- [Helm Charts](https://github.com/banziha104/pinstagram_charts/blob/master/templates/pinstagram-talk-deploy.yml) 를 통한 배포
+- [Helm Charts](https://github.com/banziha104/pinstagram_charts/blob/master/templates/pinstagram-talk-deploy.yml) 를 이용해 Google Kubernetes Engine에 배포
 
 
 ## Feature
