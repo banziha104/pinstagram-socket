@@ -36,9 +36,9 @@
 
 ## Feature
 
-- ### [Socket.IO](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/01_SocketIO.md) : Web Socket 활용을 위해 사용
-- ### [Express](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/02_Express.md) : 기존의 저장된 메세지를 접근하기 위해 
-- ### [MySQL](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/03_MySQL.md) : 메세지 데이터베이스에 접근하기 위해 사용
+- [Socket.IO](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/01_SocketIO.md)
+- [Express](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/02_Express.md)
+- [MySQL](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/03_MySQL.md)
 
 
 <br>
