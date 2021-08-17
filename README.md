@@ -24,6 +24,7 @@
   - GET /talk/healthCheck : Google Kubernetes Engines 에서 배포 여부를 readinessProbe를 이용한 헬스 체킹을 사용함으로, 이에 부하가 없는 경량의 응답처리를 위해 구현 
   - GET /talk/getAllMessgae : 기존의 메세지를 전부 읽어들이 라우팅
 
+<br>
 
 ## Deploy 
 
@@ -31,6 +32,7 @@
 - Google Container Registry 서비스로 푸쉬 
 - [Helm Charts](https://github.com/banziha104/pinstagram_charts/blob/master/templates/pinstagram-talk-deploy.yml) 를 이용해 Google Kubernetes Engine에 배포
 
+<br>
 
 ## Feature
 
@@ -38,6 +40,8 @@
 - [Express](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/02_Express.md) : 기존의 저장된 메세지를 접근하기 위해 
 - [MySQL](https://github.com/banziha104/pinstagram_socket/blob/master/markdown/use_package/03_MySQL.md) : 메세지 데이터베이스에 접근하기 위해 사용
 
+
+<br>
 
 ## Inpression
 
