@@ -48,3 +48,31 @@
 - 기존에 현업에서는 Spring Boot와 Stomp를 이용하여서 개발하였었는데, 이번에 최대한 가볍게 만들어보고자 Node.js를 활용해보았습니다.
 - 충분히 적은량의 코드로도 퍼포먼스를 낼 수 있어서 좋았습니다.
 - 다만 현재는 한개의 이벤트를 이용하고 있어 문제가 안되지만, 조금 소켓의 영향이 커진다면 TypeScript로 엄격하게 검사할 필요가 있어보입니다.
+
+<br>
+
+## License
+
+```
+MIT License
+
+Copyright (c) 2021 Coguri
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
