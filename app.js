@@ -7,7 +7,7 @@ const io = new Server(server, {path: "/talk/socket"});
 const port = 8084
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-    host: '34.64.133.74',
+    host: '10.69.224.3',
     user: 'pinstagram',
     password: 'test1234',
     database: 'pinstagram'
